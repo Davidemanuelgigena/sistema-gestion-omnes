@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.PacientesController"
+            prefWidth="850"
+            prefHeight="600">
+
+    <center>
+        <VBox spacing="16">
+            <padding>
+                <Insets top="25" right="25" bottom="25" left="25"/>
+            </padding>
+
+            <Label text="Gestión de Pacientes"
+                   style="-fx-font-size:24px; -fx-font-weight:bold;"/>
+
+            <Separator/>
+
+            <GridPane hgap="15" vgap="15">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="120"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="DNI:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtDni" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Obra Social:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtObraSocial" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="12">
+                <Button fx:id="btnGuardar"
+                        text="Guardar"
+                        prefWidth="110"
+                        onAction="#guardarPaciente"/>
+
+                <Button fx:id="btnModificar"
+                        text="Modificar"
+                        prefWidth="110"
+                        onAction="#modificarPaciente"/>
+
+                <Button fx:id="btnEliminar"
+                        text="Eliminar"
+                        prefWidth="110"
+                        onAction="#eliminarPaciente"/>
+
+                <Button fx:id="btnLimpiar"
+                        text="Limpiar"
+                        prefWidth="110"
+                        onAction="#limpiarCampos"/>
+            </HBox>
+
+            <Separator/>
+
+            <Label text="Pacientes registrados"
+                   style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+
+            <Label text="Seleccione un paciente de la tabla para modificarlo o eliminarlo."
+                   style="-fx-font-style:italic; -fx-text-fill:#666666;"/>
+
+            <TableView fx:id="tblPacientes" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="260"/>
+                    <TableColumn fx:id="colDni" text="DNI" prefWidth="160"/>
+                    <TableColumn fx:id="colObraSocial" text="Obra Social" prefWidth="260"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

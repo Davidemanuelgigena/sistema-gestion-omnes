@@ -136,7 +136,7 @@ CREATE TABLE `paciente` (
   `dni` int DEFAULT NULL,
   `obra_social` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_paciente`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +145,7 @@ CREATE TABLE `paciente` (
 
 LOCK TABLES `paciente` WRITE;
 /*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
-INSERT INTO `paciente` VALUES (1,'Juan Pérez',32145678,'APROSS');
+INSERT INTO `paciente` VALUES (1,'Juan Pérez',32145678,'APROSS'),(5,'David gigena',36987196,'Swiss medical'),(6,'Julian Martinez',12345678,'Osde'),(7,'Leonardo Perez',23654123,'Osde');
 /*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +164,7 @@ CREATE TABLE `profesional` (
   `porcentaje_aporte` decimal(5,2) DEFAULT NULL,
   `cuit` bigint DEFAULT NULL,
   PRIMARY KEY (`id_profesional`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `profesional` (
 
 LOCK TABLES `profesional` WRITE;
 /*!40000 ALTER TABLE `profesional` DISABLE KEYS */;
-INSERT INTO `profesional` VALUES (1,'María Gómez','Psicopedagogía','MP-1234',15.00,27234567891);
+INSERT INTO `profesional` VALUES (1,'María Gómez','Psicopedagogía','MP-1234',15.00,27234567891),(4,'David Emanuel Gigena','Psicomotricista','MP-5265',15.00,20369871960);
 /*!40000 ALTER TABLE `profesional` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,7 +221,7 @@ CREATE TABLE `turno` (
   KEY `fk_turno_profesional` (`id_profesional`),
   CONSTRAINT `fk_turno_paciente` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id_paciente`),
   CONSTRAINT `fk_turno_profesional` FOREIGN KEY (`id_profesional`) REFERENCES `profesional` (`id_profesional`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -230,7 +230,7 @@ CREATE TABLE `turno` (
 
 LOCK TABLES `turno` WRITE;
 /*!40000 ALTER TABLE `turno` DISABLE KEYS */;
-INSERT INTO `turno` VALUES (1,'2026-06-06 10:00:00',60,'Asignado',1,1);
+INSERT INTO `turno` VALUES (1,'2026-06-06 08:30:00',60,'Programado',1,1),(7,'2026-06-30 11:30:00',60,'Cancelado',1,1),(8,'2026-06-30 16:30:00',60,'Cancelado',6,4);
 /*!40000 ALTER TABLE `turno` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -275,4 +275,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-07 19:26:25
+-- Dump completed on 2026-06-28 22:54:27
