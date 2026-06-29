@@ -124,7 +124,7 @@
 
 # private static final String USER = "root";
 
-# private static final String PASSWORD = "\*\*\*\*\*\*\*\*";
+# private static final String PASSWORD = "root123";
 
 # ```
 
