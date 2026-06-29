@@ -1,48 +1,153 @@
-# sistema-gestion-omnes
-Seminario de practica Siglo 21 - Sistema de gestón Omnes
+# \# Sistema Integral Fundación OMNES
 
-## Descripción
+# 
 
-Proyecto académico desarrollado para la materia Seminario de Práctica de la Licenciatura en Informática (Universidad Siglo 21).
+# Proyecto académico desarrollado para la materia Seminario de Práctica de Informática de la Licenciatura en Informática - Universidad Siglo 21.
 
-El objetivo del proyecto es diseñar e implementar un sistema integral para la gestión administrativa, clínica y contable de la Fundación OMNES.
+# 
 
-## Funcionalidades principales
+# \## Descripción
 
-- Gestión de usuarios
-- Gestión de pacientes
-- Asignación de turnos
-- Registro de historias clínicas
-- Facturación electrónica (ARCA)
-- Auditoría de operaciones
-- Reportes administrativos
+# 
 
-## Tecnologías propuestas
+# El sistema implementa un prototipo funcional del módulo de Gestión de Turnos para la Fundación OMNES. Permite administrar pacientes, profesionales y turnos mediante una interfaz gráfica desarrollada con JavaFX, utilizando MySQL como base de datos y JDBC para la persistencia.
 
-- Java 17
-- JavaFX
-- Scene Builder
-- MySQL 8
-- JDBC
-- GitHub
+# 
 
-## Arquitectura
+# \## Tecnologías utilizadas
 
-El sistema fue diseñado utilizando una arquitectura en capas:
+# 
 
-- View (JavaFX)
-- Service (Lógica de negocio)
-- DAO (Persistencia)
-- Model (Entidades del dominio)
+# \- Java
 
-## Estado del proyecto
+# \- JavaFX
 
-Actualmente en desarrollo dentro del marco académico de la materia Seminario de Práctica.
+# \- Scene Builder
 
-## Autor
+# \- MySQL
 
-David Gigena
+# \- JDBC
 
-Licenciatura en Informática
+# \- Arquitectura MVC
 
-Universidad Siglo 21
+# \- Patrón DAO
+
+# \- NetBeans
+
+# 
+
+# \## Funcionalidades implementadas
+
+# 
+
+# \- Pantalla de bienvenida.
+
+# \- Gestión de pacientes.
+
+# \- Gestión de profesionales.
+
+# \- Gestión de turnos.
+
+# \- Estados de turnos: Programado, Reprogramado, Atendido, Ausente y Cancelado.
+
+# \- Persistencia de datos en MySQL.
+
+# \- Validaciones y manejo de excepciones.
+
+# 
+
+# \## Estructura del repositorio
+
+# 
+
+# ```text
+
+# docs/
+
+# diagramas/
+
+# java/
+
+# sql/
+
+# prototipos/
+
+
+
+# \## Configuración de la base de datos
+
+# 
+
+# El proyecto utiliza \*\*MySQL 8\*\* como sistema gestor de base de datos.
+
+# 
+
+# Para ejecutar la aplicación es necesario:
+
+# 
+
+# 1\. Abrir MySQL Workbench.
+
+# 2\. Ejecutar el script ubicado en la carpeta `sql/omnes\\\_db.sql`.
+
+# 3\. Verificar que la base de datos `omnes\\\_db` haya sido creada correctamente junto con sus tablas y datos de prueba.
+
+# 4\. Abrir el proyecto `SistemaTurnosOMNES` en NetBeans.
+
+# 5\. Ejecutar la aplicación.
+
+# 
+
+# \### Configuración de la conexión
+
+# 
+
+# La conexión a la base de datos se encuentra definida en la clase:
+
+# 
+
+# ```text
+
+# dao/ConexionDB.java
+
+# ```
+
+# 
+
+# En caso de que el equipo donde se ejecute el proyecto utilice un usuario o contraseña diferente para MySQL, será necesario modificar los siguientes parámetros:
+
+# 
+
+# ```java
+
+# private static final String URL = "jdbc:mysql://localhost:3306/omnes\_db";
+
+# private static final String USER = "root";
+
+# private static final String PASSWORD = "\*\*\*\*\*\*\*\*";
+
+# ```
+
+# 
+
+# Reemplazando el usuario y la contraseña por las credenciales correspondientes al servidor MySQL local.
+
+# 
+
+Una vez realizada esta configuración, la aplicación podrá conectarse normalmente a la base de datos.
+
+## Requisitos
+===
+
+# 
+
+# \- Java JDK 23 o superior
+
+# \- Apache NetBeans 25
+
+# \- JavaFX SDK
+
+# \- MySQL 8
+
+# \- MySQL Workbench (opcional, para administrar la base de datos)
+
