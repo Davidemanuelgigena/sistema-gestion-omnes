@@ -151,3 +151,7 @@ Una vez realizada esta configuración, la aplicación podrá conectarse normalme
 
 # \- MySQL Workbench (opcional, para administrar la base de datos)
 
+# Video de presentación se encuentra en el siguiente enlace:
+
+# https://drive.google.com/drive/folders/1C7tG2N_XHFp5a4PZtU-UG_JK_oE9Jo4F?usp=sharing
+
